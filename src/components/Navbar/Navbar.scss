@@ -7,9 +7,12 @@
     background-color: rgba(0, 0, 0, 0.274);
     backdrop-filter: saturate(180%) blur(5px);
     -webkit-backdrop-filter: saturate(180%) blur(5px);
+    z-index: 9;
 
     &.scrolled{
         background-color: var(--main-bg-color);
+        transition: .5s ease-in-out;
+        -webkit-transition: .5s ease-in-out;
     }
     .container{
         height: 70px;
