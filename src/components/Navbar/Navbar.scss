@@ -1,0 +1,35 @@
+.navbar{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-bg-color);
+    color: white;
+    
+    .left{
+        display: flex;
+        align-items: center;
+
+        img{
+            height: 30px;
+        }
+        span{
+            margin-left: 40px;
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+
+        .icon{
+            margin: 0 10px;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    }
+}
