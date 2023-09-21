@@ -1,10 +1,23 @@
 .navbar{
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--main-bg-color);
+    width: 100%;
     color: white;
+    font-size: 14px;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.274);
+    backdrop-filter: saturate(180%) blur(5px);
+    -webkit-backdrop-filter: saturate(180%) blur(5px);
+
+    &.scrolled{
+        background-color: var(--main-bg-color);
+    }
+    .container{
+        height: 70px;
+        padding: 0 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
     
     .left{
         display: flex;
@@ -30,6 +43,26 @@
             border-radius: 6px;
             object-fit: cover;
             cursor: pointer;
+        }
+        .profile{
+            .dropdown{
+                display: none;
+                background-color: var(--main-bg-color);
+                border-radius: 5px;
+            }
+            span{
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                cursor: pointer;
+            }
+            &:hover .dropdown{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                right: 0;
+            }
         }
     }
 }
