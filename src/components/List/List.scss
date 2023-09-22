@@ -1,0 +1,32 @@
+.list{
+    color: white;
+    margin-top: 15px;
+    .list_title{
+        margin-left: 50px;
+    }
+    .list_wrapper{
+        position: relative;
+        .slider_arrow{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50px;
+            height: 100%;
+            margin: auto;
+            background-color: rgba(29, 28, 28, 0.459);
+            cursor: pointer;
+            &.left{
+                left: 0;
+            }
+            &.right{
+                right: 0;
+            }
+        }
+        .list_container{
+            display: flex;
+            align-items: center;
+            width: max-content;
+            margin-left: 50px;
+        }
+    }
+}
