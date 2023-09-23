@@ -1,0 +1,21 @@
+.watch{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    .back{
+        color: white;
+        background-color: transparent;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        backdrop-filter: blur(40px);
+        box-shadow: px 0px 50px 10px #454545;
+    }
+    video{
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,77 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0)0%, rgba(0,0,0,1) 100%), url('../../../public/netflix_bg.jpg');
+    background-size: cover;
+    position: relative;
+    .container{
+        color: white;
+        padding: 0 50px;
+        .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            img{
+                height: 40px;
+            }
+            button{
+                border: 1px solid white;
+                background-color: red;
+                outline: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 20px;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        .register_content{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1{
+                font-weight: 60px;
+            }
+            h3{
+                margin-top: 5px;
+                margin-bottom: 15px;
+            }
+            p{
+                margin: 10px 0;
+            }
+            .input{
+                background-color: #fff;
+                width: 50%;
+                height: 50px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                input{
+                    flex: 9;
+                    border: 1px solid red;
+                    padding: 17px;
+                    outline: none;
+                }
+                button{
+                    flex: 3;
+                    background-color: red;
+                    font-size: 20px;
+                    font-weight: 500;
+                    border:none;
+                    padding: 13px;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

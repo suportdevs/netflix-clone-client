@@ -22,6 +22,36 @@
     }
     .item_content{
         padding: 10px;
+        .content_icons{
+            display: flex;
+            align-items: center;
+            .icon{
+                border: 1px solid #fff;
+                border-radius: 50%;
+                margin-right: 10px;
+                font-size: 14px;
+                padding: 5px;
+            }
+        }
+        .others_info{
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: gray;
+            span{
+                margin: 10px 10px 10px 0px;
+            }
+            .limit{
+                border: 1px solid gray;
+                padding: 1px 2px;
+                border-radius: 5px;
+            }
+        }
+        .genre{
+            font-weight: 500;
+            color: gray;
+            margin-top: 10px;
+        }
     }
     &:hover{
         width: 400px;

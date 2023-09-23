@@ -3,7 +3,6 @@ import "./ListItem.scss";
 import { Add, PlayArrow, ThumbDownAltOutlined, ThumbUpAltOutlined } from "@mui/icons-material";
 
 export default function ListItem({index}) {
-    const trailer = 'https://www.youtube.com/watch?v=JvNuYOR7b4w&list=PLtiyZbErwO-gz0aEy58x2JFJL0QQQV-8X&index=12';
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -15,7 +14,7 @@ export default function ListItem({index}) {
             {
                 isHovered && (
                     <>
-                    <video src={{trailer}} autoPlay={true} loop />
+                    <video src={process.env.PUBLIC_URL + '/trailer.mp4'} autoPlay={true} loop />
                     <div className="item_content">
                         <div className="content_icons">
                             <PlayArrow className="icon" />
@@ -29,7 +28,7 @@ export default function ListItem({index}) {
                             <span>1999</span>
                         </div>
                         <div className="content_text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe placeat earum molestiae maxime corrupti, obcaecati quis nostrum nihil modi!</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe placeat earum molestiae maxime corrupti!</p>
                         </div>
                         <div className="genre">
                             Actions
