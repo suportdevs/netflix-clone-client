@@ -13,6 +13,7 @@
         cursor: pointer;
         backdrop-filter: blur(40px);
         box-shadow: px 0px 50px 10px #454545;
+        z-index: 1;
     }
     video{
         width: 100%;
