@@ -12,7 +12,7 @@ export default function Home () {
             <Navbar/>
             <Featured type={'movie'}/>
             {
-                lists?.map((list, index) => <List list={list} key={index}></List>)
+                isListLoading ? "Loading..." : lists?.map((list, index) => <List list={list} key={index}></List>)
             }
         </div>
     )
