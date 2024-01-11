@@ -1,6 +1,7 @@
 import { ArrowDropDownOutlined, NotificationsNoneOutlined, SearchOutlined, Logout } from "@mui/icons-material";
 import "./Navbar.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -13,10 +14,18 @@ export default function Navbar() {
         <div className={isScrolled ? "navbar scrolled" : "navbar"}>
             <div className="container">
                 <div className="left">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
-                    <span>Homepage</span>
-                    <span>Series</span>
-                    <span>Movies</span>
+                    <Link to="/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
+                    </Link>
+                    <Link to="/">
+                        <span className="link">Homepage</span>
+                    </Link>
+                    <Link to="/series">
+                        <span className="link">Series</span>
+                    </Link>
+                    <Link to="/movies">
+                        <span className="link">Movies</span>
+                    </Link>
                     <span>New & Popular</span>
                     <span>My List</span>
                 </div>
