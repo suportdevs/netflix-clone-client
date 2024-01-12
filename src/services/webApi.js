@@ -23,7 +23,10 @@ export const webApi = createApi({
         getMovie: builder.query({
             query: (id) => `movies/find/${id}`,
         }),
+        getRandomMovie: builder.query({
+            query: (type) => `movies/random${type ? '?type=' + type : ''}`,
+        })
     }),
 });
 
-export const {useGetListsQuery, useGetMovieQuery} = webApi;
+export const {useGetListsQuery, useGetMovieQuery, useGetRandomMovieQuery} = webApi;

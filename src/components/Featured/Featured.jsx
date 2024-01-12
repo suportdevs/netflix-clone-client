@@ -1,7 +1,16 @@
 import { InfoOutlined, PlayArrow } from "@mui/icons-material";
 import "./Featured.scss";
+import { useGetRandomMovieQuery } from "../../services/webApi";
+import { useEffect, useState } from "react";
 
 export default function Featured({type}){
+    const [content, setContent] = useState({});
+    const {data, isLoading, isSuccess} = useGetRandomMovieQuery(type);
+    useEffect(() => {
+       isSuccess && setContent(data[0]);
+    }, [type, isSuccess]);
+    console.log(content)
+    
     return (
         <div className="featured">
             {type && (
@@ -16,17 +25,21 @@ export default function Featured({type}){
                 </select>
             </div>
             )}
-            <img src={process.env.PUBLIC_URL + 'netflix_bg.jpg'} alt="" />
-            <div className="featured_content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum veritatis nam temporibus cupiditate doloribus in beatae sint incidunt totam quos.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum veritatis nam temporibus cupiditate doloribus in beatae sint incidunt totam quos.
-                </p>
-                <div className="featured_buttons">
-                    <button className="play"><PlayArrow /> <span>Play</span></button>
-                    <button className="more"><InfoOutlined /> <span>More</span></button>
-                </div>
-            </div>
+            {
+                isLoading ? 'Loading...' : (
+                    <>
+                    <img src={content.thumbImg} alt="" />
+                    <div className="featured_content">
+                        <img src={content.brandImg} alt="" />
+                        <p>{content.description}</p>
+                        <div className="featured_buttons">
+                            <button className="play"><PlayArrow /> <span>Play</span></button>
+                            <button className="more"><InfoOutlined /> <span>More</span></button>
+                        </div>
+                    </div>
+                    </>
+                )
+            }
         </div>
     )
 }
