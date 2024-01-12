@@ -17,17 +17,23 @@ export default function Navbar() {
                     <Link to="/">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
                     </Link>
-                    <Link to="/">
-                        <span className="link">Homepage</span>
+                    <Link to="/" className="link">
+                        <span >Homepage</span>
                     </Link>
-                    <Link to="/series">
-                        <span className="link">Series</span>
+                    <Link to="/series" className="link">
+                        <span >Series</span>
                     </Link>
-                    <Link to="/movies">
-                        <span className="link">Movies</span>
+                    <Link to="/movies" className="link">
+                        <span >Movies</span>
                     </Link>
                     <span>New & Popular</span>
                     <span>My List</span>
+                    <Link to="/login" className="link">
+                        <span >Login</span>
+                    </Link>
+                    <Link to="/register" className="link">
+                        <span >Register</span>
+                    </Link>
                 </div>
                 <div className="right">
                     <SearchOutlined className="icon" />
