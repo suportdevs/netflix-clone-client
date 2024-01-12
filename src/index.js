@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { Provider } from 'react-redux';
 import {store} from './services/store';
+import Dashboard from './pages/Admin/Dashboard';
 
 const user = true;
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: (!user ? <Login /> : <Navigate to="/" />),
+  },
+  {
+    path: '/admin/dashboar',
+    element: (!user ? <Dashboard /> : <Navigate to="/" />),
   },
 ])
 

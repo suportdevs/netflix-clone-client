@@ -1,0 +1,48 @@
+.userList{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px gainsboro;
+    -webkit-box-shadow: 0px 2px 10px gainsboro;
+    margin: 20px;
+
+}
+.userListTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.userListTitle{
+    color: #525252;
+}
+.userCreateBtn {
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background: darkcyan;
+    color: #fff;
+    cursor: pointer;
+}
+.userListUser {
+    display: flex;
+    align-items: center;
+}
+
+img.userListUserImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.userListIcon{
+    font-size: 20px;
+    cursor: pointer;
+}
+.userListIcon.edit{
+    color: green;
+}
+.userListIcon.delete{
+    color: tomato;
+}

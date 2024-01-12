@@ -1,0 +1,60 @@
+
+.newUser{
+    flex: 2;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gainsboro;
+    -webkit-box-shadow: 0px 0px 10px gainsboro;
+}
+.newUserTitle{
+    color: #525252;
+    margin-bottom: 30px;
+}
+.newUserForm{
+    display: flex;
+    flex-wrap: wrap;
+}
+.newUserItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #525252;
+    width: 45%;
+    margin-right: 5%;
+}
+
+.newUserAvatar {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.newUserItemInput {
+    border: none;
+    padding: 10px;
+    border-bottom: 1px solid #525252;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.newUserItemBtn {
+    border: none;
+    padding: 10px 15px;
+    background: lightgreen;
+    font-weight: 600;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.newUserInputGroup {
+    display: flex;
+    align-items: center;
+}
+.newUserInputGroup input {
+    margin: 0 10px;
+}
+.newUserItem:last-child{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
