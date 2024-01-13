@@ -1,13 +1,14 @@
 import "./Dashboard.css";
-import FeaturedInfo from "../../components/FeaturedInfo/FeaturedInfo";
-import Chart from "../../components/Chart/Chart";
-import { userData } from "../../utilies/userData";
-import WidgetSm from "../../components/WidgetSm/WidgetSm";
-import WidgetLg from "../../components/WidgetLg/WidgetLg";
+import FeaturedInfo from "../../components/Admin/FeaturedInfo";
+import Chart from "../../components/Admin/Chart";
+import { userData } from "../../userData";
+import WidgetSm from "../../components/Admin/WidgetSm";
+import WidgetLg from "../../components/Admin/WidgetLg";
 
 export default function Dashboard(){
     return (
         <div className="home">
+            hi
             <FeaturedInfo />
             <Chart title="User Analytices" data={userData} dataKey="Active User" grid/>
             <div className="widget">

@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Sidebar from "../Sidebar/Sidebar";
-import TopBar from "../TopBar/TopBar";
+import Sidebar from "../Admin/Sidebar";
+import TopBar from "../../components/Admin/TopBar";
 
 export default function Layout(){
     return (
@@ -9,6 +9,7 @@ export default function Layout(){
         <div className='container'>
             <Sidebar/>
             <div className="mainContentWrapper">
+                hi
             <Outlet />
             </div>
         </div>
