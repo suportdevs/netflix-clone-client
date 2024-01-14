@@ -26,6 +26,9 @@ root.render(
           <Route path="/match" element={user ? <Watch /> : <Navigate to='/register' />} />
           <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
           <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
+          <Route path='/admin' element={<Layout />}>
+            <Route path="dashboard" element={user ? <Dashboard /> : <Navigate to="/register" />}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     

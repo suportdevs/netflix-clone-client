@@ -9,8 +9,7 @@ export default function Layout(){
         <div className='container'>
             <Sidebar/>
             <div className="mainContentWrapper">
-                hi
-            <Outlet />
+                <Outlet />
             </div>
         </div>
         </>

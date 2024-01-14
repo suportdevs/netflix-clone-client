@@ -7,8 +7,7 @@ import WidgetLg from "../../components/Admin/WidgetLg";
 
 export default function Dashboard(){
     return (
-        <div className="home">
-            hi
+        <div className="dashboard">
             <FeaturedInfo />
             <Chart title="User Analytices" data={userData} dataKey="Active User" grid/>
             <div className="widget">
