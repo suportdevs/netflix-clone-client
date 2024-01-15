@@ -7,7 +7,7 @@ export const webApi = createApi({
         prepareHeaders: (headers, { getState }) => {
             // Get the token from your state
             // const token = cookies.get('token');
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWQ5NzgyNWU5ZjQ5OTVlOGJiYWViNCIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcwNTE2ODY3MSwiZXhwIjoxNzA1MjU1MDcxfQ.1sftXQjQxNVMVnvZ1nOmI59KgwUTNLiznWbyDm8MIy8';
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWQ5NzgyNWU5ZjQ5OTVlOGJiYWViNCIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcwNTM0Mjc1NywiZXhwIjoxNzA1NDI5MTU3fQ.n5ISuT7o_LA_8mCml5-n3nImYW17i-Q7uufk2j4ft6g';
             if (token) {
               headers.set('token', `Bearer ${token}`);
             }
@@ -25,8 +25,11 @@ export const webApi = createApi({
         }),
         getRandomMovie: builder.query({
             query: (type) => `movies/random${type ? '?type=' + type : ''}`,
-        })
+        }),
+        getUserStats: builder.query({
+            query: () => `users/stats`,
+        }),
     }),
 });
 
-export const {useGetListsQuery, useGetMovieQuery, useGetRandomMovieQuery} = webApi;
+export const {useGetListsQuery, useGetMovieQuery, useGetRandomMovieQuery, useGetUserStatsQuery} = webApi;
