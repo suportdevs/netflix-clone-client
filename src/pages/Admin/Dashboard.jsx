@@ -24,7 +24,7 @@ export default function Dashboard(){
         'Dec'
     ], []);
 
-    const {data: userStats, isLoading, isSuccess} = useGetUserStatsQuery();
+    const {data: userStats, isSuccess} = useGetUserStatsQuery();
     useEffect(() => {
         (isSuccess && userStats) && userStats.map((item) => 
             setStats((prev) => [
@@ -33,8 +33,6 @@ export default function Dashboard(){
             ])
         )
     }, [MONTHS, isSuccess]);
-    console.log(userStats);
-    console.log(stats);
 
     return (
         <div className="dashboard">

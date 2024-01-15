@@ -29,7 +29,10 @@ export const webApi = createApi({
         getUserStats: builder.query({
             query: () => `users/stats`,
         }),
+        getUsers: builder.query({
+            query: () => `users`,
+        }),
     }),
 });
 
-export const {useGetListsQuery, useGetMovieQuery, useGetRandomMovieQuery, useGetUserStatsQuery} = webApi;
+export const {useGetListsQuery, useGetMovieQuery, useGetRandomMovieQuery, useGetUserStatsQuery, useGetUsersQuery} = webApi;
