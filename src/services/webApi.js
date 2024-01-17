@@ -7,7 +7,7 @@ export const webApi = createApi({
         prepareHeaders: (headers, { getState }) => {
             // Get the token from your state
             // const token = cookies.get('token');
-            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWQ5NzgyNWU5ZjQ5OTVlOGJiYWViNCIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcwNTM0Mjc1NywiZXhwIjoxNzA1NDI5MTU3fQ.n5ISuT7o_LA_8mCml5-n3nImYW17i-Q7uufk2j4ft6g';
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MWQ5NzgyNWU5ZjQ5OTVlOGJiYWViNCIsInVzZXJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBZG1pbiIsImlhdCI6MTcwNTUwNjA0OSwiZXhwIjoxNzA1NTkyNDQ5fQ.4DzWhDDCF9GqElOMGdMxxm3cZSu9vepAuP1E_OIMOJk';
             if (token) {
               headers.set('token', `Bearer ${token}`);
             }

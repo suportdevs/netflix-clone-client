@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import "./Register.scss";
+import { Link } from "react-router-dom";
 
 export default function Register(){
     const [email, setEmail] = useState("");
@@ -18,8 +19,12 @@ export default function Register(){
         <div className="register">
             <div className="container">
                 <div className="top">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
-                    <button>Sign in</button>
+                    <Link to='/'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="" />
+                    </Link>
+                    <Link to='/login'>
+                        <button>Sign in</button>
+                    </Link>
                 </div>
                 <div className="register_content">
                     <h1>Unlimited movies, Tv shows and more</h1>
@@ -33,8 +38,8 @@ export default function Register(){
                                 </div>
                             ) : 
                                 <form className="input">
-                                <input type="password" placeholder="Password" ref={passwordRef} />
-                                <button onClick={handleFinish}>Get Started</button>
+                                    <input type="password" placeholder="Password" ref={passwordRef} />
+                                    <button onClick={handleFinish}>Get Started</button>
                                 </form>
                         }
                 </div>
