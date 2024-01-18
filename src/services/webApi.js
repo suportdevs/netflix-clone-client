@@ -16,8 +16,7 @@ export const webApi = createApi({
     }),
     endpoints: (builder) => ({
         getLists: builder.query({
-            query: ({type, genre}) => 
-           ( console.log(type, genre),
+            query: ({type, genre}) => (
             `lists${type ? '?type=' + type : ''}${genre ? '&genre=' + genre : ''}`),
         }),
         getMovie: builder.query({

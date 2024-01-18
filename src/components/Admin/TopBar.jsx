@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./TopBar.css";
 import { NotificationsNone, Language, Settings } from "@mui/icons-material";
 
@@ -6,7 +7,9 @@ export default function TopBar(){
         <div className="topbar">
             <div className="topbarWrapper">
                 <div className="topbarLeft">
-                    <h2 className="logo">Dashboard</h2>
+                    <Link to="/admin/dashboard">
+                        <h2 className="logo">Dashboard</h2>
+                    </Link>
                 </div>
                 <div className="topbarRight">
                     <div className="topbarRightIconWrapper">

@@ -9,7 +9,6 @@ export default function Featured({type}){
     useEffect(() => {
        isSuccess && setContent(data[0]);
     }, [type, isSuccess]);
-    console.log(content)
     
     return (
         <div className="featured">

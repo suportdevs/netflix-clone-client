@@ -1,13 +1,25 @@
 import { ArrowDropDownOutlined, NotificationsNoneOutlined, SearchOutlined, Logout } from "@mui/icons-material";
 import "./Navbar.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setCurrentUser } from "../../services/AuthSlice";
 
 export default function Navbar() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true);
         return () => (window.onscroll = null);
+    }
+    const handleLogout = (e) => {
+        e.preventDefault();
+        dispatch(setCurrentUser(null));
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+        console.log('logout');
     }
     
     return (
@@ -44,7 +56,7 @@ export default function Navbar() {
                         <ArrowDropDownOutlined className="icon" />
                         <div className="dropdown">
                             <span>Settings</span>
-                            <span><Logout /> Logout</span>
+                            <span onClick={handleLogout}><Logout /> Logout</span>
                         </div>
                     </div>
                 </div>
