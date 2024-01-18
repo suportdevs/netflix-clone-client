@@ -13,13 +13,14 @@
             justify-content: space-between;
             padding: 10px 0;
             width: 100%;
+            z-index: 2;
             img{
                 height: 40px;
                 cursor: pointer;
             }
             button{
                 border: 1px solid white;
-                background-color: tomato;
+                background-color: red;
                 outline: none;
                 padding: 10px 20px;
                 border-radius: 5px;

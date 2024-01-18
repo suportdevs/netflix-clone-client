@@ -1,9 +1,14 @@
 import { useRef, useState } from "react";
 import "./Login.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../services/authApi";
+import { setCurrentUser } from "../../services/AuthSlice";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 export default function Login(){
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const[login, responseinfo] = useLoginMutation();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +24,20 @@ export default function Login(){
         }
     }
 
-    console.log("success" + responseinfo)
+    if(responseinfo.isError){
+        toast.error(responseinfo.error.data.message);
+    }
+    if(responseinfo.isSuccess){
+        toast.success(responseinfo.data.message);
+        localStorage.setItem("token", JSON.stringify(responseinfo.data.accessToken));
+        localStorage.setItem("user", JSON.stringify(responseinfo.data.info));
+        const defaultHeaders = new Headers();
+        if (responseinfo.data.accessToken) {
+            defaultHeaders.append("token", `Bearer ${responseinfo.data.accessToken}`);
+        }
+        dispatch(setCurrentUser(responseinfo.data.info))
+        navigate('/');
+    }
 
     return (
         <div className="login">

@@ -11,8 +11,9 @@ import {store} from './services/store';
 import Dashboard from './pages/Admin/Dashboard';
 import Layout from './components/Admin/Layout';
 import { BrowserRouter, Navigate, Route, Routes,  } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
-const user = false;
+const user = JSON.parse(localStorage.getItem('token'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,7 +32,7 @@ root.render(
           </Route>
         </Routes>
       </BrowserRouter>
-    
+    <Toaster />
     </Provider>
 );
 
