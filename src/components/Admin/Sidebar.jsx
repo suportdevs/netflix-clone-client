@@ -1,4 +1,5 @@
 import { AttachMoneyOutlined, BarChartOutlined, ChatBubbleOutlineOutlined, Home, MailOutlined, ManageAccountsOutlined, PersonOutline, RecyclingOutlined, Settings, Storefront, Timeline, TrendingUp } from "@mui/icons-material";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 
@@ -28,6 +29,11 @@ export default function Sidebar(){
                         <li className="sidebarListItem">
                             <Link className="siderListLink" to="/users">
                                 <PersonOutline className="listItemIcon" /> Users
+                            </Link>
+                        </li>
+                        <li className="sidebarListItem">
+                            <Link className="siderListLink" to="/admin/dashboard/movies">
+                            <PlayCircleOutlineIcon className="listItemIcon" /> Movies
                             </Link>
                         </li>
                         <li className="sidebarListItem">

@@ -2,10 +2,11 @@ import { ArrowDropDownOutlined, NotificationsNoneOutlined, SearchOutlined, Logou
 import "./Navbar.scss";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "../../services/AuthSlice";
 
 export default function Navbar() {
+    const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +20,6 @@ export default function Navbar() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
         navigate('/login');
-        console.log('logout');
     }
     
     return (
@@ -55,6 +55,12 @@ export default function Navbar() {
                     <div className="profile">
                         <ArrowDropDownOutlined className="icon" />
                         <div className="dropdown">
+                            {
+                                (user && user.role === "Admin") &&
+                                    <Link to="/admin/dashboard" className="link">
+                                        <span>Dashboard</span>
+                                    </Link>
+                            }
                             <span>Settings</span>
                             <span onClick={handleLogout}><Logout /> Logout</span>
                         </div>

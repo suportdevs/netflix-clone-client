@@ -7,7 +7,7 @@ export default function TopBar(){
         <div className="topbar">
             <div className="topbarWrapper">
                 <div className="topbarLeft">
-                    <Link to="/admin/dashboard">
+                    <Link to="/admin/dashboard" className="link">
                         <h2 className="logo">Dashboard</h2>
                     </Link>
                 </div>
