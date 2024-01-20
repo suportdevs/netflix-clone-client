@@ -2,36 +2,48 @@ import { DeleteOutline, EditNote } from "@mui/icons-material";
 import "./MovieList.css";
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from "react-router-dom";
-import {productRows} from "../../productData";
-import { useState } from "react";
+import {movies} from "../../productData";
+import { useEffect, useState } from "react";
+import { useDeleteMovieMutation, useGetMoviesQuery } from "../../services/movieApi";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteStoredMovie, getMovies } from "../../services/movieSlice";
 
 export default function MovieList(){
-    const [movies, setMovies] = useState(productRows);
+    const dispatch = useDispatch();
+    const {data: movieArray, isLoading, isSuccess} = useGetMoviesQuery();
+    const [deleteMovie, {isLoading: isDeleteLoading, isSuccess: isDeleteSuccess}] = useDeleteMovieMutation();
 
-    const handleMovieDelete = (id) => {
-        setMovies(movies.filter(movie => movie.id !== id));
+    useEffect(() => {
+        isSuccess && dispatch(getMovies(movieArray));
+    }, [dispatch,isSuccess]);
+
+    const movies = useSelector((state) => state.movie.movies);
+
+    const handleMovieDelete = async (id) => {
+        await deleteMovie(id).unwrap();
+        isDeleteLoading && dispatch(deleteStoredMovie(id));
     }
 
     const columns = [
-    { field: 'id', headerName: 'ID', width: 90 },
+    { field: '_id', headerName: 'ID', width: 90 },
     { field: 'movie', headerName: 'Movie', width: 250, renderCell: (params) => {
         return (
             <div className="movieListMovie">
-                <img className="movieListMovieImg" src={params.row.image} alt="" />
-                <span className="movieListName">{params.row.name}</span>
+                <img className="movieListMovieImg" src={params.row.brandImg} alt="" />
+                <span className="movieListName">{params.row.title}</span>
             </div>
         )
     }},
-    { field: 'stock', headerName: 'Stock', width: 250 },
-    { field: 'status', headerName: 'Status', width: 150 },
-    { field: 'price', headerName: 'Price', width: 150 },
+    { field: 'genre', headerName: 'Genre', width: 250 },
+    { field: 'limit', headerName: 'Limit', width: 150 },
+    { field: 'year', headerName: 'Year', width: 150 },
     { field: 'actions', headerName: 'Actions', width: 130, renderCell: (params) => {
         return (
             <div className="movieTableAction">
-                <Link to={"movie/edit/" + params.row.id}>
+                <Link to={"movie/edit/" + params.row._id}>
                 <EditNote className="movieListIcon edit" />
                 </Link>
-                <DeleteOutline className="movieListIcon delete" onClick={() => handleMovieDelete(params.row.id)} />
+                <DeleteOutline className="movieListIcon delete" onClick={() => handleMovieDelete(params.row._id)} />
             </div>
         )
     } },
@@ -50,11 +62,12 @@ export default function MovieList(){
                 columns={columns}
                 initialState={{
                 pagination: {
-                    paginationModel: { page: 0, pageSize: 5 },
+                    paginationModel: { page: 0, pageSize: 10 },
                 },
                 }}
                 pageSizeOptions={[5, 10]}
                 checkboxSelection
+                getRowId={(row) => row._id}
             />
             </div>
         </div>

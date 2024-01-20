@@ -16,7 +16,13 @@ export const movieApi = createApi({
         getMovies: builder.query({
             query: () => '/movies',
         }),
+        deleteMovie: builder.mutation({
+            query: (id) => ({
+                url: `/movies/${id}`,
+                method: 'DELETE',
+            })
+        })
     }),
 });
 
-export const {useGetMoviesQuery} = movieApi;
+export const {useGetMoviesQuery, useDeleteMovieMutation} = movieApi;
