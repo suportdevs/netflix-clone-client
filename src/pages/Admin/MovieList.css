@@ -1,0 +1,48 @@
+.movieList{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px gainsboro;
+    -webkit-box-shadow: 0px 0px 10px gainsboro;
+    margin: 20px;
+
+}
+.movieListTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.movieListTitle{
+    color: #525252;
+}
+.movieListCreateBtn {
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background: darkcyan;
+    color: #fff;
+    cursor: pointer;
+}
+.movieListMovie {
+    display: flex;
+    align-items: center;
+}
+
+.movieListMovieImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.movieListIcon{
+    font-size: 20px;
+    cursor: pointer;
+}
+.movieListIcon.edit{
+    color: green;
+}
+.movieListIcon.delete{
+    color: tomato;
+}

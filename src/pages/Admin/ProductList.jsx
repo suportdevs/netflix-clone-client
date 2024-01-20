@@ -2,7 +2,7 @@ import { DeleteOutline, EditNote } from "@mui/icons-material";
 import "./ProductList.css";
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from "react-router-dom";
-import {productRows} from "../../utilies/productData";
+import {productRows} from "../../productData";
 import { useState } from "react";
 
 export default function ProductList(){
