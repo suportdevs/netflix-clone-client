@@ -51,10 +51,10 @@ export default function MovieList(){
     return (
         <div className="movieList">
             <div className="movieListTop">
-            <h3 className="movieListTitle">Movie List</h3>
-            <Link to="/newMovie">
-            <button className="movieListCreateBtn">Create</button>
-            </Link>
+                <h3 className="movieListTitle">Movie List</h3>
+                <Link to="/admin/dashboard/movies/create">
+                    <button className="movieListCreateBtn">Create</button>
+                </Link>
             </div>
             <div className="movieListContent">
             <DataGrid
