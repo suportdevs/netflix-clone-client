@@ -27,15 +27,15 @@ export default function Featured({type}){
             {
                 isLoading ? 'Loading...' : (
                     <>
-                    <img src={content.thumbImg} alt="" />
-                    <div className="featured_content">
-                        <img src={content.brandImg} alt="" />
-                        <p>{content.description}</p>
-                        <div className="featured_buttons">
-                            <button className="play"><PlayArrow /> <span>Play</span></button>
-                            <button className="more"><InfoOutlined /> <span>More</span></button>
+                        <img src={content.thumbImg} alt="" />
+                        <div className="featured_content">
+                            <img src={content.brandImg} alt="" />
+                            <p>{content.description}</p>
+                            <div className="featured_buttons">
+                                <button className="play"><PlayArrow /> <span>Play</span></button>
+                                <button className="more"><InfoOutlined /> <span>More</span></button>
+                            </div>
                         </div>
-                    </div>
                     </>
                 )
             }

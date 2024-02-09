@@ -2,16 +2,15 @@ import { DeleteOutline, EditNote } from "@mui/icons-material";
 import "./MovieList.css";
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from "react-router-dom";
-import {movies} from "../../productData";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDeleteMovieMutation, useGetMoviesQuery } from "../../services/movieApi";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteStoredMovie, getMovies } from "../../services/movieSlice";
 
 export default function MovieList(){
     const dispatch = useDispatch();
-    const {data: movieArray, isLoading, isSuccess} = useGetMoviesQuery();
-    const [deleteMovie, {isLoading: isDeleteLoading, isSuccess: isDeleteSuccess}] = useDeleteMovieMutation();
+    const {data: movieArray, isSuccess} = useGetMoviesQuery();
+    const [deleteMovie, {isLoading: isDeleteLoading}] = useDeleteMovieMutation();
 
     useEffect(() => {
         isSuccess && dispatch(getMovies(movieArray));

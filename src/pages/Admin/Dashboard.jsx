@@ -1,7 +1,6 @@
 import "./Dashboard.css";
 import FeaturedInfo from "../../components/Admin/FeaturedInfo";
 import Chart from "../../components/Admin/Chart";
-import { userData } from "../../userData";
 import WidgetSm from "../../components/Admin/WidgetSm";
 import WidgetLg from "../../components/Admin/WidgetLg";
 import { useEffect, useMemo, useState } from "react";

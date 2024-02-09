@@ -22,7 +22,7 @@ const user = useSelector((state) => state.user.user);
         <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
         <Route path='/admin' element={<Layout />}>
-          <Route path="dashboard" element={(user && user.role == 'Admin') ? <Dashboard /> : <Navigate to="/register" />} />
+          <Route path="dashboard" element={(user && user.role === 'Admin') ? <Dashboard /> : <Navigate to="/register" />} />
           <Route path='dashboard/movies' element={<MovieList />} />
           <Route path='dashboard/movies/create' element={<NewMovie />} />
         </Route>

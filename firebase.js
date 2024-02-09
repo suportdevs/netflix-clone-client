@@ -1,4 +1,4 @@
-import firebase from "firebase";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -10,6 +10,4 @@ const firebaseConfig = {
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
   };
 
-firebase.initializeApp(firebaseConfig);
-
-export default storage = firebase.storage();
+initializeApp(firebaseConfig);
