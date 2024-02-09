@@ -23,13 +23,13 @@ export default function List({list}){
         <div className="list">
             <h1 className="list_title">{list.title}</h1>
             <div className="list_wrapper">
-            <ArrowBackIos className="slider_arrow left" onClick={() => handleSlide('left')} style={{display: !isMoved && 'none'}} />
-            <div className="list_container" ref={listRef}>
-                {
-                    list.content.map((id, index) => <ListItem index={index} id={id} key={index}/>)
-                }
-            </div>
-            <ArrowForwardIos className="slider_arrow right" onClick={() => handleSlide('right')} />
+                <ArrowBackIos className="slider_arrow left" onClick={() => handleSlide('left')} style={{display: !isMoved && 'none'}} />
+                <div className="list_container" ref={listRef}>
+                    {
+                        list.content.map((id, index) => <ListItem index={index} id={id} key={index}/>)
+                    }
+                </div>
+                <ArrowForwardIos className="slider_arrow right" onClick={() => handleSlide('right')} />
             </div>
         </div>
     )
