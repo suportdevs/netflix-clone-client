@@ -15,6 +15,7 @@ export default function NewMovie(){
     }
 console.log(movie);
 
+
     return (
         <div className="newMovie">
             <h3 className="newMovieTitle">New Movie</h3>
