@@ -8,6 +8,7 @@ export default function NewMovie(){
     const [featuredImg, setFeaturedImg] = useState(null);
     const [trailer, setTrailer] = useState(null);
     const [video, setVideo] = useState(null);
+    const [uploaded, setUploaded] = useState(0);
 
     const handleChangle = (e) => {
         setMovie({...movie, [e.target.name]: e.target.value});
@@ -70,9 +71,9 @@ console.log(movie);
                     <input className="newMovieItemInput newMovieItemFile" type="file" name="video" onChange={(e) => setVideo(e.target.files[0])} />
                 </div>
                 <div className="newMovieItem">
-                    <button className="newMovieItemBtn">Update</button>
+                    {uploaded === 5 ? <button className="newMovieItemBtn">Update</button> : <button className="newMovieItemBtn">Create</button> }
                 </div>
-                </form>
+            </form>
         </div>
     )
 }
